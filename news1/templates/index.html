@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chaset="utf-8">
+</head>
+<body>
+
+{% for i in allnews %}
+    <div><a  href="{{request.path}}{{i.id}}">{{i.标题}} </a></div> 
+{% endfor %}
+ <p> 
+  {% for page_number in allnews.paginator.page_range %}
+    {% ifequal page_number  allnews.number %}
+      {{ page_number }}
+    {% else %}
+      <a href="?page={{ page_number }}">{{ page_number }}</a>
+    {% endifequal %}
+  {% endfor %}
+</p> 
+    
+    
+    
+    
+    
+    
+</body>   
+          
+    
+</html>
